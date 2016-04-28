@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 12.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{A0CA14C5-80C0-4782-B7A5-0F7AADAA97E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Umdf2", "Umdf2", "{C6FE2D11-F8D0-4B8B-9243-FFF05ABA95E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driver", "Driver", "{0759E509-C2B6-4C7D-A6E1-832150847530}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kmdf", "Kmdf", "{0E53ABAA-6885-47FE-95A0-7ED6585A1FE9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testvhid", "app\testvhid.vcxproj", "{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1} = {CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VhidminiUm", "driver\umdf2\VhidminiUm.vcxproj", "{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vhidmini", "driver\kmdf\vhidmini.vcxproj", "{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Debug|Win32.Build.0 = Debug|Win32
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Debug|x64.ActiveCfg = Debug|x64
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Debug|x64.Build.0 = Debug|x64
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Release|Win32.ActiveCfg = Release|Win32
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Release|Win32.Build.0 = Release|Win32
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Release|x64.ActiveCfg = Release|x64
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E}.Release|x64.Build.0 = Release|x64
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Debug|Win32.Build.0 = Debug|Win32
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Debug|x64.ActiveCfg = Debug|x64
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Debug|x64.Build.0 = Debug|x64
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Release|Win32.ActiveCfg = Release|Win32
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Release|Win32.Build.0 = Release|Win32
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Release|x64.ActiveCfg = Release|x64
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1}.Release|x64.Build.0 = Release|x64
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Debug|Win32.Build.0 = Debug|Win32
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Debug|x64.ActiveCfg = Debug|x64
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Release|Win32.ActiveCfg = Release|Win32
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Release|Win32.Build.0 = Release|Win32
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Release|x64.ActiveCfg = Release|x64
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6FE2D11-F8D0-4B8B-9243-FFF05ABA95E7} = {0759E509-C2B6-4C7D-A6E1-832150847530}
+		{0E53ABAA-6885-47FE-95A0-7ED6585A1FE9} = {0759E509-C2B6-4C7D-A6E1-832150847530}
+		{52B4AF60-09E2-4C74-804C-08E5BF7ACA1E} = {A0CA14C5-80C0-4782-B7A5-0F7AADAA97E0}
+		{CD1D0FA6-08E7-46FC-B119-D65B8D52C2E1} = {C6FE2D11-F8D0-4B8B-9243-FFF05ABA95E7}
+		{E6FB12D0-E6DD-447C-844D-B6B3B5F5693F} = {0E53ABAA-6885-47FE-95A0-7ED6585A1FE9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,52 @@
+﻿Build started 4/28/2016 5:35:18 PM.
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" on node 2 (Build target(s)).
+     1>DriverBuildNotifications:
+         Building 'vhidmini' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+       StampInf:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\stampinf.exe -d "*" -a "amd64" -v "*" -k "1.11" -f .\x64\Debug\\vhidmini.inf 
+         Stamping .\x64\Debug\\vhidmini.inf [Version] section with DriverVer=04/28/2016,17.35.18.501
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\" /Ix64\Debug\ /I..\..\inc /I.. /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\wdm" /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D _WIN64 /D _AMD64_ /D AMD64 /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D _WIN32_WINNT=0x0603 /D WINVER=0x0603 /D WINNT=1 /D NTDDI_VERSION=0x06030000 /D DBG=1 /D _UNICODE /D UNICODE /D KMDF_VERSION_MAJOR=1 /D KMDF_VERSION_MINOR=11 /GF /Gm- /Zp8 /GS /Gy /fp:precise /Zc:wchar_t- /Zc:forScope /Zc:inline /GR- /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared\warning.h" /errorReport:prompt /kernel -cbstring -d2epilogunwind /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ ..\vhidmini.c util.c
+         vhidmini.c
+     1>..\vhidmini.c(1027): warning C4100: 'QueueContext': unreferenced formal parameter
+     1>..\vhidmini.c(1218): warning C4311: 'type cast': pointer truncation from 'PVOID' to 'ULONG'
+     1>..\vhidmini.c(1425): warning C4189: 'timerPeriodInSeconds': local variable is initialized but not referenced
+         util.c
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"x64\Debug\vhidmini.sys" /VERSION:"10.0" /INCREMENTAL:NO /NOLOGO /WX /SECTION:"INIT,d" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\um\x64\hid.lib" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\um\x64\comdlg32.lib" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\km\x64\BufferOverflowFastFailK.lib" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\km\x64\ntoskrnl.lib" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\km\x64\hal.lib" "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\km\x64\wmilib.lib" "C:\Program Files (x86)\Windows Kits\10\lib\wdf\kmdf\x64\1.11\WdfLdr.lib" "C:\Program Files (x86)\Windows Kits\10\lib\wdf\kmdf\x64\1.11\WdfDriverEntry.lib" /MANIFEST:NO /Debug /PDB:"x64\Debug\vhidmini.pdb" /SUBSYSTEM:NATIVE,"6.03" /Driver /OPT:REF /OPT:ICF /ENTRY:"FxDriverEntry" /RELEASE /IMPLIB:"x64\Debug\vhidmini.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X64 /PROFILE /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 /osversion:10.0 /pdbcompress /debugtype:pdata x64\Debug\vhidmini.res
+         x64\Debug\vhidmini.obj
+         x64\Debug\util.obj
+         vhidmini.vcxproj -> C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\x64\Debug\vhidmini.sys
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (1) is building "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (1:2) on node 2 (TestSign target(s)).
+     1>TestSign:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe sign /ph /sha1 "C2E549D5BA2A73695556ACC5250ADD3DFB15E06C" 
+         Done Adding Additional Store
+         Successfully signed: C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\x64\Debug\vhidmini.sys
+         
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (TestSign target(s)).
+     1>Inf2Cat:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\inf2cat.exe /os:6_3_x64 /driver:x64\Debug\vhidmini\ 
+         ............................
+         Signability test complete.
+         
+         Errors:
+         None
+         
+         Warnings:
+         None
+         
+         Catalog generation complete.
+         C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\x64\Debug\vhidmini\wudf.cat
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (1) is building "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (1:3) on node 2 (TestSign target(s)).
+     1>TestSign:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe sign /ph /sha1 "C2E549D5BA2A73695556ACC5250ADD3DFB15E06C" 
+         Done Adding Additional Store
+         Successfully signed: x64\Debug\vhidmini\wudf.cat
+         
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (TestSign target(s)).
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\kmdf\vhidmini.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.32

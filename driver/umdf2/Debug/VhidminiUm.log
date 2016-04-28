@@ -1,0 +1,53 @@
+﻿Build started 4/25/2016 6:24:14 PM.
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1574,5): warning MSB3231: Unable to remove directory "Debug\VhidminiUm\". The process cannot access the file 'C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\Debug\VhidminiUm\' because it is being used by another process.
+     1>DriverBuildNotifications:
+         Building 'VhidminiUm' with toolset 'WindowsUserModeDriver10.0' and the 'Desktop' target platform.
+       StampInf:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\stampinf.exe -d "*" -a "x86" -v "*" -u "2.0.0"  -x -f .\Debug\\VhidminiUm.inf 
+         Stamping .\Debug\\VhidminiUm.inf [Version] section with DriverVer=04/25/2016,18.24.15.374
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IDebug\ /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\wdm" /I..\..\inc /I.. /Zi /nologo /W4 /WX /Od /Oi /Oy- /D _X86_=1 /D i386=1 /D STD_CALL /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D WIN32_LEAN_AND_MEAN=1 /D _WIN32_WINNT=0x0603 /D WINVER=0x0603 /D WINNT=1 /D NTDDI_VERSION=0x06030000 /D DBG=1 /D _WINDLL /D _UNICODE /D UNICODE /D UMDF_VERSION_MAJOR=2 /D UMDF_VERSION_MINOR=0 /D UMDF_USING_NTSTATUS /D _UNICODE /D UNICODE /GF /Gm- /Zp8 /GS /Gy /fp:precise /Zc:wchar_t- /Zc:forScope /Zc:inline /GR- /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared\warning.h" /analyze- /errorReport:prompt /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ ..\vhidmini.c util.c
+         vhidmini.c
+         util.c
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\rc.exe /D _X86_=1 /D i386=1 /D STD_CALL /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D WIN32_LEAN_AND_MEAN=1 /D _WIN32_WINNT=0x0603 /D WINVER=0x0603 /D WINNT=1 /D NTDDI_VERSION=0x06030000 /D DBG=1 /D "SMP_ID=\\\"{35F5415D-57BD-487A-BB64-040C2B51C1A9}\\\"" /D _UNICODE /D UNICODE /l"0x0409" /IDebug\ /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\km\\wdm" /I..\..\inc /I.. /nologo /fo"Debug\vhidmini.res" vhidmini.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\VhidminiUm.dll" /VERSION:"10.0" /INCREMENTAL:NO /NOLOGO /WX /SECTION:"INIT,d" "C:\Program Files (x86)\Windows Kits\10\lib\wdf\umdf\x86\2.0\WdfDriverStubUm.lib" ntdll.lib mincore.lib "C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\um\x86\\mincore.lib" /MANIFEST:NO /Debug /PDB:"Debug\VhidminiUm.pdb" /SUBSYSTEM:WINDOWS,"6.03" /OPT:REF /OPT:ICF /RELEASE /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug\VhidminiUm.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X86 /PROFILE /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 /osversion:10.0 /pdbcompress /debugtype:pdata /DLL Debug\vhidmini.res
+         Debug\vhidmini.obj
+         Debug\util.obj
+            Creating library Debug\VhidminiUm.lib and object Debug\VhidminiUm.exp
+         VhidminiUm.vcxproj -> C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\Debug\VhidminiUm.dll
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (1) is building "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (1:2) on node 2 (TestSign target(s)).
+     1>TestSign:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe sign /ph /sha1 "C2E549D5BA2A73695556ACC5250ADD3DFB15E06C" 
+         Done Adding Additional Store
+         Successfully signed: C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\Debug\VhidminiUm.dll
+         
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (TestSign target(s)).
+     1>Inf2Cat:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\inf2cat.exe /os:6_3_x86 /driver:Debug\VhidminiUm\ 
+         ........................
+         Signability test complete.
+         
+         Errors:
+         None
+         
+         Warnings:
+         None
+         
+         Catalog generation complete.
+         C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\Debug\VhidminiUm\wudf.cat
+     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (1) is building "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (1:3) on node 2 (TestSign target(s)).
+     1>TestSign:
+         C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe sign /ph /sha1 "C2E549D5BA2A73695556ACC5250ADD3DFB15E06C" 
+         Done Adding Additional Store
+         Successfully signed: Debug\VhidminiUm\wudf.cat
+         
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (TestSign target(s)).
+     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.54
