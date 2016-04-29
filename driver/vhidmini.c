@@ -101,14 +101,14 @@ HID_REPORT_DESCRIPTOR G_GamepadReportDescriptor[] =
 		USB_HID_INPUT_ABS),
 
 	//
-	// To talk to the gamepad
+	// To talk to the driver, we write to this gamepad output
 	//
 	UsageMinimum(0),     
-	UsageMaximum(3),    
+	UsageMaximum(4),    
 	LogicalMinimum(0),   
 	LogicalMaximum(255), 
 	ReportSize(8),       
-	ReportCount(3),     
+	ReportCount(4),     
 	Output(USB_HID_OUTPUT_DATA | USB_HID_OUTPUT_VARIABLE | USB_HID_OUTPUT_ABS), 
 
 	EndCollection,
@@ -303,8 +303,8 @@ Return Value:
     }
 
     deviceContext = GetDeviceContext(device);
-    deviceContext->Device       = device;
-	//deviceContext->DeviceData = 0;
+    deviceContext->Device        = device;
+	deviceContext->PreviousCount = 0;
 	memset(deviceContext->DeviceData, 0, sizeof(deviceContext->DeviceData));
 
     hidAttributes = &deviceContext->HidDeviceAttributes;
@@ -1496,7 +1496,8 @@ Return Value:
     WDFREQUEST              request;
 	HIDMINI_KEYB_REPORT     readKBReport;
 	HIDMINI_GAME_REPORT     readGPReport;
-	//FILE *fp;
+	UCHAR                   previousCount = 0;
+	FILE *fp;
 
     KdPrint(("EvtTimerFunc\n"));
 
@@ -1512,14 +1513,11 @@ Return Value:
 
     if (NT_SUCCESS(status)) {
 
-		//fp = fopen("C:\\Temp\\vhidmini", "a");
+		fp = fopen("C:\\Temp\\vhidmini.log", "a"); // Append to log
         
-		UCHAR gpdata[3] = { 0,0,0 };
+		UCHAR gpdata[4] = { 0,0,0,0 };
 
-		memcpy(gpdata, queueContext->DeviceContext->DeviceData, sizeof(queueContext->DeviceContext->DeviceData));
-
-		//fprintf(fp, "gpData: 0x%x, 0x%X, 0x%x\n", gpdata[0], gpdata[1], gpdata[2]);
-
+		readGPReport.ReportId = 0x01;
 		readKBReport.ReportId = 0x02;
 
 		readKBReport.Data[0] = (UCHAR)(0x00);
@@ -1531,27 +1529,46 @@ Return Value:
 		readKBReport.Data[6] = (UCHAR)(0x00);
 		readKBReport.Data[7] = (UCHAR)(0x00);
 
-		readKBReport.Data[0] = gpdata[0];
-		readKBReport.Data[2] = gpdata[1];
+		readGPReport.Data[0] = (UCHAR)(0x7F); // X centered
+		readGPReport.Data[1] = (UCHAR)(0x7F); // Y centered
+		readGPReport.Data[2] = (UCHAR)(0x00); // No buttons pressed
 
+		memcpy(gpdata, queueContext->DeviceContext->DeviceData, sizeof(queueContext->DeviceContext->DeviceData));
 
-		readGPReport.ReportId = 0x01;
+		fprintf(fp, "gpData: 0x%x, 0x%X, 0x%x, 0x%X\n", gpdata[0], gpdata[1], gpdata[2], gpdata[3]);
 
-		readGPReport.Data[0] = gpdata[0];
-		readGPReport.Data[1] = gpdata[1];
-		readGPReport.Data[2] = 0;
+		// Copy over previous count
+		memcpy(&previousCount, &queueContext->DeviceContext->PreviousCount, sizeof(previousCount)); 
 
-		if (gpdata[2] == 0)
+		// If count was updated, we send new data.
+		/*if (gpdata[3] == (previousCount + 1)) 
+		{*/
+			readKBReport.Data[0] = 0;// gpdata[1]; // Keyboard modifier key
+			readKBReport.Data[2] = gpdata[2]; // Key press (w,a,s,d)
+
+			readGPReport.Data[0] = gpdata[1]; // Game X
+			readGPReport.Data[1] = gpdata[2]; // Game Y
+
+			// Increment prev count
+			queueContext->DeviceContext->PreviousCount = previousCount + 1;
+		/*}*/
+
+		if (gpdata[0] == 0)
 		{
 			status = RequestCopyFromBuffer(request,
 				&readGPReport,
 				sizeof(readGPReport));
+
+			fprintf(fp, "readGPReport: 0x%x, 0x%X, 0x%x, 0x%X\n", readGPReport.Data[0], readGPReport.Data[1], readGPReport.Data[2]);
 		}
-		else {
+		else 
+		{
 			status = RequestCopyFromBuffer(request,
 				&readKBReport,
 				sizeof(readKBReport));
 		}
+
+		fclose(fp);
 
         WdfRequestComplete(request, status);
     }

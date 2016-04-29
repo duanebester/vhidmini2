@@ -118,7 +118,7 @@ typedef struct _HIDMINI_OUTPUT_REPORT {
     
     UCHAR ReportId;   
 
-    UCHAR Data[3]; 
+    UCHAR Data[4]; 
 
 } HIDMINI_OUTPUT_REPORT, *PHIDMINI_OUTPUT_REPORT;
 

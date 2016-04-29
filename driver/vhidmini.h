@@ -40,7 +40,8 @@ typedef struct _DEVICE_CONTEXT
     WDFQUEUE                DefaultQueue;
     WDFQUEUE                ManualQueue;
     HID_DEVICE_ATTRIBUTES   HidDeviceAttributes;
-    UCHAR                   DeviceData[3];
+    UCHAR                   DeviceData[4];
+	UCHAR					PreviousCount;
     HID_DESCRIPTOR          HidDescriptor;
     PHID_REPORT_DESCRIPTOR  ReportDescriptor;
     BOOLEAN                 ReadReportDescFromRegistry;
@@ -175,6 +176,6 @@ ReadDescriptorFromRegistry(
 // These are the device attributes returned by the mini driver in response
 // to IOCTL_HID_GET_DEVICE_ATTRIBUTES.
 //
-#define HIDMINI_PID             0xFEED
-#define HIDMINI_VID             0xDEED
+#define HIDMINI_PID             0xCC
+#define HIDMINI_VID             0x1A1A
 #define HIDMINI_VERSION         0x0101

@@ -94,8 +94,8 @@ UMDriverCopy=12,UMDF ; copy to drivers\umdf
 
 [Strings]
 ProviderString     ="TODO-Set-Provider"
-ManufacturerString ="TODO-Set-Manufacturer"
-ClassName          ="Sample Device"
+ManufacturerString ="Virtuix"
+ClassName          ="Omni Device"
 Disk_Description   ="HID minidriver (UMDF v2) Installation Disk"
-DeviceDesc         ="HID minidriver (UMDF v2) Device"
+DeviceDesc         ="Omni HID minidriver (UMDF v2) "
 WudfRdDisplayName  ="Windows Driver Foundation - User-mode Driver Framework Reflector"

@@ -1,8 +1,5 @@
-﻿Build started 4/28/2016 5:58:06 PM.
-     1>Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" on node 2 (Clean target(s)).
-     1>C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1574,5): warning MSB3231: Unable to remove directory "x64\Debug\VhidminiUm\". The process cannot access the file 'C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\x64\Debug\VhidminiUm\' because it is being used by another process.
-     1>Done Building Project "C:\Users\duane\Downloads\Windows-driver-samples-master\Windows-driver-samples-master\hid\vhidmini2\driver\umdf2\VhidminiUm.vcxproj" (Clean target(s)).
+﻿Build started 4/29/2016 1:11:05 PM.
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.11
